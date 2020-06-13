@@ -26,9 +26,16 @@ RUN									\
 		);							\
 	do								\
 		apk del $package;					\
-	done
+	done								\
+									;
 #########################################################################
 RUN									\
-	rm -rf /etc/nginx/conf.d					\
-		&& ln -s /run/secrets/etc/nginx/conf.d /etc/nginx
+	rm -f /etc/nginx/nginx.conf					\
+	&& 								\
+	rm -rf /etc/nginx/conf.d/*					\
+	&& 								\
+	ln -s /run/secrets/etc/nginx/conf.d/secrets/ /etc/nginx/conf.d/ \
+	&& 								\
+	ln -s /run/secrets/etc/nginx/conf.d/configs/ /etc/nginx/conf.d/ \
+									;
 #########################################################################
