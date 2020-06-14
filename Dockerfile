@@ -30,14 +30,15 @@ RUN									\
 									;
 #########################################################################
 RUN									\
-	rm --force /etc/nginx/nginx.conf				\
+	rm 	-f 	/etc/nginx/nginx.conf				\
 	&& 								\
-	rm --force --recursive /etc/nginx/conf.d/*			\
+	rm 	-f -r 	/etc/nginx/conf.d/*				\
 	&& 								\
-	ln --symbolic 							\
-		/run/secrets/etc/nginx/conf.d/secrets/ 			\
-		/etc/nginx/conf.d/ 					\
+	ln 	--symbolic 						\
+			/run/secrets/etc/nginx/conf.d/secrets/ 		\
+			/etc/nginx/conf.d/ 				\
 	&& 								\
-	mkdir --parents /etc/nginx/conf.d/configs/ /etc/nginx/conf.d/ 	\
+	mkdir 	--parents 						\
+			/etc/nginx/conf.d/configs/ 			\
 									;
 #########################################################################
