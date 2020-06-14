@@ -10,6 +10,7 @@ FROM alpine:3.11
 ARG port
 
 #LABEL maintainer="NGINX Docker Maintainers <docker-maint@nginx.com>"
+LABEL maintainer="Sebastian Colomar <sebastian.colomar@gmail.com>"
 
 ENV NGINX_VERSION 1.18.0
 #ENV NJS_VERSION   0.4.0
