@@ -35,12 +35,5 @@ RUN									\
 	&& 								\
 	rm 	-f 							\
 		-r 	/etc/nginx/conf.d/*				\
-	&& 								\
-	ln 	-s 							\
-			/run/secrets/etc/nginx/conf.d/secrets/ 		\
-			/etc/nginx/conf.d/ 				\
-	&& 								\
-	mkdir 	-p 							\
-			/etc/nginx/conf.d/configs/ 			\
 									;
 #########################################################################
