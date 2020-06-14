@@ -2,12 +2,10 @@
 #      Copyright (C) 2020        Sebastian Francisco Colomar Bauza      #
 #      SPDX-License-Identifier:  GPL-2.0-only                           #
 #########################################################################
-ARG port=8080
-#########################################################################
 FROM alpine:3.11
 
 # Listening port
-ARG port
+#ARG port
 
 #LABEL maintainer="NGINX Docker Maintainers <docker-maint@nginx.com>"
 LABEL maintainer="Sebastian Colomar <sebastian.colomar@gmail.com>"
@@ -122,7 +120,7 @@ RUN set -x \
     && rm -f /etc/nginx/nginx.conf \
     && rm -f /etc/nginx/conf.d/*
 
-EXPOSE ${port}
+#EXPOSE ${port}
 
 STOPSIGNAL SIGTERM
 
