@@ -5,7 +5,7 @@ You need to populate the container with a custom NginX configuration since it ha
 
 In that custom configuration you need to *include* the following non-standard files:
 ```
-    include /etc/nginx/conf.d/*.conf;
+    include /etc/nginx/conf.d/*.conf        ;
     include /etc/nginx/conf.d/configs/*.conf;
     include /etc/nginx/conf.d/secrets/*.conf;
 ```
