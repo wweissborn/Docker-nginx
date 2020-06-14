@@ -1,0 +1,25 @@
+#########################################################################
+#      Copyright (C) 2020        Sebastian Francisco Colomar Bauza      #
+#      SPDX-License-Identifier:  GPL-2.0-only                           #
+#########################################################################
+version: "3.8"
+services:
+  nginx:
+    image: secobau/nginx
+    ports:
+    - 8080:8080
+    secrets:
+    -
+      source: default.conf
+      target: /etc/nginx/conf.d/default.conf
+    configs:
+    -
+      source: nginx.conf
+      target: /etc/nginx/nginx.conf
+secrets:
+  default.conf:
+    file: ./etc/nginx/conf.d/default.conf
+configs:
+  nginx.conf:
+    file: ./etc/nginx/nginx.conf
+#########################################################################
