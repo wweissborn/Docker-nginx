@@ -14,9 +14,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
+    - name: Build and test the Docker image
       run: |
         docker build . --file Dockerfile --tag secobau/nginx:$(date +%s)
         docker swarm init
+        sudo cp -rv run/* /run
         docker stack deploy -c etc/docker/swarm/docker-compose.yaml nginx
         curl -I localhost:8080
