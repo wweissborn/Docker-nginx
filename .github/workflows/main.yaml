@@ -40,7 +40,7 @@ jobs:
         sed -i s/worker/manager/ ${compose}
         sed -i s/secobau/${date}/ ${compose}
         docker swarm init
-        docker build -t ${date}/nginx .
+        docker build -t ${date}/nginx --no-cache .
         docker stack deploy -c ${compose} test
         chmod +x ${script}
         ./${script}
