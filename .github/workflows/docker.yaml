@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+#  push:
+#    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: |
+        docker build . --file Dockerfile --tag secobau/nginx:$(date +%s)
+        docker swarm init
+        docker stack deploy -c etc/docker/swarm/docker-compose.yaml nginx
+        curl -I localhost:8080
