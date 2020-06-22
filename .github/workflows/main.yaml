@@ -34,11 +34,13 @@ jobs:
       run: |
         set -x
         compose=etc/docker/swarm/docker-compose.yaml
+        date=$( date +%s )
         script=bin/check-service.sh
         sudo cp -rv run/* /run
-        sed -i s/worker/manager/ $compose
+        sed -i s/worker/manager/ ${compose}
+        sed -i s/secobau/${date}/ ${compose}
         docker swarm init
-        docker build -t secobau/nginx .
-        docker stack deploy -c $compose test
-        chmod +x $script
-        ./$script
+        docker build -t ${date}/nginx .
+        docker stack deploy -c ${compose} test
+        chmod +x ${script}
+        ./${script}
