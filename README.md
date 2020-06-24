@@ -1,4 +1,4 @@
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/secobau/docker-aws?color=Green)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/secobau/nginx?color=Green)
 
 # Usage
 
