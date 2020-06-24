@@ -1,4 +1,4 @@
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/secobau/nginx)
+![CI](https://github.com/secobau/nginx/workflows/CI/badge.svg)
 
 # Usage
 
