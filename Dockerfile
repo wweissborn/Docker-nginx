@@ -32,6 +32,13 @@ RUN									\
 #########################################################################
 RUN									\
 	rm 	-f 							\
+			/etc/nginx/nginx.conf				\
+	&& 								\
+	rm 	-f 							\
 		-r 	/etc/nginx/conf.d/*				\
+	&& 								\
+	ln	-s							\
+			/run/secrets/nginx/etc/nginx/nginx.conf		\
+			/etc/nginx/nginx.conf				\
 									;
 #########################################################################
