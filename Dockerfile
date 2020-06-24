@@ -38,7 +38,7 @@ RUN									\
 		-r 	/etc/nginx/conf.d/*				\
 	&& 								\
 	ln	-s							\
-			/run/secrets/nginx/etc/nginx/nginx.conf		\
+			/run/nginx/etc/nginx/nginx.conf			\
 			/etc/nginx/nginx.conf				\
 									;
 #########################################################################
