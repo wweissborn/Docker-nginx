@@ -1,6 +1,8 @@
 #########################################################################
 #      Copyright (C) 2020        Sebastian Francisco Colomar Bauza      #
 #      SPDX-License-Identifier:  GPL-2.0-only                           #
+#                                                                       #
+#      Modified for my repo (wweissborn/nginx):  7/14/2020
 #########################################################################
 configs:
   nginx.conf:
@@ -18,7 +20,7 @@ services:
     -
       source: nginx.conf
       target: /etc/nginx/nginx.conf
-    image: secobau/nginx
+    image: wweissborn/nginx
     networks:
     - my_network
     ports:
