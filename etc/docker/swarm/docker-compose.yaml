@@ -18,7 +18,7 @@ services:
     -
       source: nginx.conf
       target: /etc/nginx/nginx.conf
-    image: secobau/nginx
+    image: wweissborn/nginx
     networks:
     - my_network
     ports:
