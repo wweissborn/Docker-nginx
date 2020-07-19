@@ -15,6 +15,7 @@ jobs:
 
   swarm:
     # The type of runner that the job will run on
+    # "free" github will spin up a container for you running this image/os
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
