@@ -35,10 +35,12 @@ jobs:
       name: Test the app
       run: |
         set -x
+        # Running in a bash shell so these are shell commands that will be run to test the app
         compose=etc/docker/swarm/docker-compose.yaml
         date=$( date +%s )
         script=.github/bin/check-service.sh
         sudo cp -rv run/* /run
+        # Have to run on manager because github doesn't let you have a cluster--only one machine
         sed -i s/worker/manager/ ${compose}
         sed -i s/wweissborn/${date}/ ${compose}
         docker swarm init
