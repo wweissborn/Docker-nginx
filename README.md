@@ -1,4 +1,4 @@
-![CI](https://github.com/secobau/nginx/workflows/CI/badge.svg)
+![CI](https://github.com/wweissborn/nginx/workflows/CI/badge.svg)
 
 # Usage
 
